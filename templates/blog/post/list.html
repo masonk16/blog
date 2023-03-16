@@ -26,4 +26,5 @@
         <hr class="invis">
     {% endfor %}
     </div><!-- end blog-list -->
+    {% include "blog/pagination.html" with page=posts %}
 {% endblock %}
