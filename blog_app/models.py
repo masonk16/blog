@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
+from django.urls import reverse
 
 
 class User(AbstractUser):
@@ -30,11 +31,20 @@ class Post(models.Model):
         max_length=10, choices=STATUS_CHOICES, default="draft"
     )
 
+    objects = models.Manager()  # The default manager.
+    published = PublishedManager()  # Our custom manager.
+
     class Meta:
         ordering = ("-publish",)
 
     def __str__(self):
         return self.title
 
-    objects = models.Manager()  # The default manager.
-    published = PublishedManager()  # Our custom manager.
+    def get_absolute_url(self):
+        return reverse(
+            'blog:post_detail',
+            args=[
+                self.publish.year, self.publish.month,
+                self.publish.day, self.slug
+            ]
+        )
