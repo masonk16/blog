@@ -1,4 +1,5 @@
 {% extends "blog/base.html" %}
+{% load static %}
 {% block title %}My Blog{% endblock %}
 {% block content %}
     <div class="blog-list clearfix">
@@ -7,7 +8,7 @@
             <div class="col-md-4">
                 <div class="post-media">
                     <a href="{{ post.get_absolute_url }}">
-                        <img src="upload/tech_blog_01.jpg" alt="" class="img-fluid">
+                        <img src="{% static 'upload/tech_blog_01.jpg' %}" alt="" class="img-fluid">
                         <div class="hovereffect"></div>
                     </a>
                 </div><!-- end media -->
@@ -20,7 +21,11 @@
                 <small><a href="detail.html" title="">{{ post.publish }}</a></small>
                 <small><a href="tech-author.html" title="">by {{ post.author }}</a></small>
                 <small><a href="detail.html" title=""><i class="fa fa-eye"></i> 1114</a></small>
-            </div><!-- end meta -->
+                <div class="tag-cloud-single">
+                    <span>Tags</span>
+                    <small><a href="#" title="">{{ post.tags.all|join:", " }}</a></small>
+                </div><!-- end meta -->
+        </div>
         </div><!-- end blog-box -->
 
         <hr class="invis">
