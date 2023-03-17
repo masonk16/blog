@@ -25,11 +25,11 @@
                     <span>Tags</span>
                     <small><a href="#" title="">{{ post.tags.all|join:", " }}</a></small>
                 </div><!-- end meta -->
-        </div>
+            </div>
         </div><!-- end blog-box -->
 
         <hr class="invis">
     {% endfor %}
     </div><!-- end blog-list -->
-    {% include "blog/pagination.html" with page=page_obj %}
+    {% include "blog/pagination.html" with page=posts %}
 {% endblock %}
