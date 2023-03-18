@@ -1,5 +1,6 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load blog_tags %}
 {% block title %}My Blog{% endblock %}
 {% block content %}
     <div class="blog-list clearfix">
@@ -19,7 +20,7 @@
 
             <div class="blog-meta big-meta col-md-8">
                 <h4><a href="{{ post.get_absolute_url }}" title="">{{ post.title }}</a></h4>
-                <p>{{ post.body|truncatewords:30|linebreaks }}</p>
+                <p>{{ post.body|markdown|truncatewords_html:25 }}</p>
                 <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">Reviews</a></small>
                 <small><a href="detail.html" title="">{{ post.publish }}</a></small>
                 <small><a href="tech-author.html" title="">by {{ post.author }}</a></small>
