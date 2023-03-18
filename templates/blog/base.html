@@ -60,7 +60,7 @@
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="tech-index.html">Home</a>
+                                <a class="nav-link" href="{% url 'blog_app:post_list' %}">Home</a>
                             </li>
                             <li class="nav-item dropdown has-submenu menu-large hidden-md-down hidden-sm-down hidden-xs-down">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">News</a>
@@ -433,13 +433,16 @@
                         </ul>
                         <ul class="navbar-nav mr-2">
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa fa-rss"></i></a>
+                                <a class="nav-link" href="{% url 'blog_app:post_feed' %}"><i class="fa fa-rss"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa fa-android"></i></a>
+                                <a class="nav-link" href="https://github.com/masonk16"><i class="fa fa-github"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa fa-apple"></i></a>
+                                <a class="nav-link" href="https://twitter.com/MasonMapfunde"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.linkedin.com/in/mason-mapfunde/"><i class="fa fa-linkedin"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -576,11 +579,10 @@
                                 <a href="index.html"><img src="images/version/tech-footer-logo.png" alt="" class="img-fluid"></a>
                                 <p>Tech Blog is a technology blog, we sharing marketing, news and gadget articles.</p>
                                 <div class="social">
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                                    <a href="https://github.com/masonk16" data-toggle="tooltip" data-placement="bottom" title="GitHub"><i class="fa fa-github"></i></a>
+                                    <a href="https://twitter.com/MasonMapfunde" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="https://www.linkedin.com/in/mason-mapfunde/" data-toggle="tooltip" data-placement="bottom" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/masonmapfunde/" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
                                 </div>
 
                                 <hr class="invis">
