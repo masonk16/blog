@@ -12,8 +12,10 @@
             <div class="col-md-4">
                 <div class="post-media">
                     <a href="{{ post.get_absolute_url }}">
-                        <img src="{% static 'upload/tech_blog_01.jpg' %}" alt="" class="img-fluid">
+                        {% if post.cover %}
+                        <img src="{{ post.cover.url }}" alt="" class="img-fluid">
                         <div class="hovereffect"></div>
+                        {% endif %}
                     </a>
                 </div><!-- end media -->
             </div><!-- end col -->
