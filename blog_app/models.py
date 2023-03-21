@@ -19,6 +19,7 @@ class PublishedManager(models.Manager):
 class Post(models.Model):
     STATUS_CHOICES = (("draft", "Draft"), ("published", "Published"))
     title = models.CharField(max_length=250)
+    cover = models.ImageField(upload_to='images/', null=True)
     slug = models.SlugField(max_length=250, unique_for_date="publish")
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
